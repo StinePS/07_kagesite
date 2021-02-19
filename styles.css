@@ -10,6 +10,10 @@ img {
 	vertical-align: middle;
 }
 
+section {
+	margin: 0 1rem 2rem 1rem;
+}
+
 /* ====================================================================== */
 
 /* FONTS & STYLING */
@@ -19,8 +23,7 @@ h1 {
 	text-transform: uppercase;
 	text-align: center;
 	opacity: 0.8;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 1rem;
 	letter-spacing: 0.1rem;
 }
 
@@ -30,6 +33,7 @@ h2 {
 	font-size: 1.5rem;
 	text-align: center;
 	color: #EAA7A2;
+	margin-bottom: 1rem;
 }
 
 P {
@@ -37,6 +41,7 @@ P {
 	font-weight: 400;
 	font-size: 1rem;
 	max-width: 60ch;
+	margin-bottom: 1rem;
 }
 
 a {
@@ -80,6 +85,9 @@ button:hover {
 	color: #fff;
 }
 
+#frontpage_button {
+	margin-bottom: 2rem;
+}
 
 /* Kager */
 #button_filter {
@@ -138,17 +146,17 @@ footer {
 	align-items: center;
 }
 
+.centrering {
+	width: 70vw;
+	max-width: 1280px;
+	margin: 0 auto;
+	align-items: center;
+}
+
 .gallery_image {
 	position: relative;
 }
 
-
-/* .center {
-	max-width: 70vw;
-	margin: 0 auto;
-	align-items: center;
-}
- */
 /* Om os */
 .person {
 	background-color: #dfede9;
@@ -172,13 +180,13 @@ footer {
 }
 
 
-
 /* ====================================================================== */
 
 /* SPLASH */
 #splash {
 	width: 100%;
 	display: grid;
+	margin: 0 0 2rem 0;
 }
 
 .splash_img,
@@ -220,39 +228,22 @@ footer {
 		display: none;
 	}
 
+	.grid-1-1 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 3rem;
+	}
+
 	.grid-1-1-1 {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 1.5rem;
-		max-width: 70vw;
-		margin: 0 auto;
+		grid-gap: 1rem;
 	}
-
-	/* Forside */
-	.splash {
-		width: 100vw;
-		height: 56.25vh;
-		display: grid;
-	}
-
-	.col {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		column-gap: 50px;
-	}
-
-	/* #velkommen,
-	#maanedens {
-		margin-left: 50px;
-		margin-right: 50px;
-		margin-top: 10vh;
-	} */
 
 	/* Kager */
 	#main_kager {
 		display: grid;
 		grid-template-areas: "sidebar content content content";
-
 	}
 
 	.sidebar {
