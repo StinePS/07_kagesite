@@ -108,3 +108,36 @@ h2 {}
 
 	}
 }
+
+/* --------------- kager hover -----------------*/
+
+
+.hover_text {
+	opacity: 0;
+	font-size: 25px;
+}
+
+.gallery_image:hover p {
+	opacity: 1;
+}
+
+.gallery_image:hover img {
+	opacity: 0.3;
+}
+
+.gallery_image {
+	display: grid;
+}
+
+.gallery_image img,
+.gallery_image p {
+	grid-area: 1 / 1;
+}
+
+.gallery_image img {
+	place-self: center;
+}
+
+.gallery_image p {
+	place-self: center;
+}
