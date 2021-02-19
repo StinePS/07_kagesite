@@ -10,44 +10,40 @@ img {
 	vertical-align: middle;
 }
 
-main {
-	max-width: 1300px;
-	margin: 0 auto;
-}
-
-section {
-	margin 1rem;
-}
-
-
 /* ====================================================================== */
 
 /* FONTS & STYLING */
 h1 {
-	font-family: Bodoni MT, serif;
-	font-size: 3rem;
+	font-family: 'Old Standard TT', serif;
+	font-size: 4rem;
 	text-transform: uppercase;
 	text-align: center;
 	opacity: 0.8;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	letter-spacing: 0.1rem;
 }
 
 h2 {
-	font-family: Tahoma, sans-serif;
-	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	font-size: 1.5rem;
 	text-align: center;
 	color: #EAA7A2;
 }
 
 P {
-	font-family: Arial, sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	font-size: 1rem;
+	max-width: 60ch;
 }
 
 a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
 	color: #000;
+	font-size: 1.1rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.1rem;
@@ -111,13 +107,12 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0px 20px;
+	padding: 0 1rem;
 	background-color: #9ED3C3;
 }
 
 .logo {
-	width: 45px;
-	padding: 5px;
+	width: 3.5rem;
 	cursor: pointer;
 }
 
@@ -126,20 +121,10 @@ header {
 
 /* FOOTER */
 
-html {
-	height: 100%;
-}
-
-body {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
 footer {
 	background-color: #9ED3C3;
 	margin-top: auto;
-	padding: 30px;
+	padding: 2rem;
 	text-align: center;
 }
 
@@ -157,13 +142,14 @@ footer {
 	position: relative;
 }
 
-/* Om os */
-.om_main {
+
+/* .center {
 	max-width: 70vw;
 	margin: 0 auto;
+	align-items: center;
 }
-
-
+ */
+/* Om os */
 .person {
 	background-color: #dfede9;
 }
@@ -191,6 +177,7 @@ footer {
 
 /* SPLASH */
 #splash {
+	width: 100%;
 	display: grid;
 }
 
@@ -236,7 +223,9 @@ footer {
 	.grid-1-1-1 {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 20px;
+		grid-gap: 1.5rem;
+		max-width: 70vw;
+		margin: 0 auto;
 	}
 
 	/* Forside */
@@ -252,17 +241,12 @@ footer {
 		column-gap: 50px;
 	}
 
-	#velkommen p,
-	#maanedens p {
-		max-width: 550px;
-	}
-
-	#velkommen,
+	/* #velkommen,
 	#maanedens {
 		margin-left: 50px;
 		margin-right: 50px;
 		margin-top: 10vh;
-	}
+	} */
 
 	/* Kager */
 	#main_kager {
