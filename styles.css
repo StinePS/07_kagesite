@@ -6,7 +6,15 @@
 
 img {
 	width: 100%;
+	vertical-align: middle;
 }
+
+main {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+section {}
 
 
 /* FONTS & STYLING */
@@ -14,16 +22,89 @@ h1 {}
 
 h2 {}
 
+#button_filter {
+	background-color: #000;
+	color: #fff;
+}
+
+/* tilføj pseudo-element på alle img i gallery = hvide kanter */
+.gallery_image::after {
+	content: '';
+	position: absolute;
+	border: 1px solid #fff;
+	top: 0.5rem;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
+}
 
 /* CLASSES */
+.gallery_image {
+	position: relative;
+}
 
 
 /* GRIDS */
-
+#gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 1rem;
+}
 
 /* SPECIFIKT FOR MOBILE */
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+	.hide_on_mobile {
+		display: none;
+	}
+}
 
 
 /* SPECIFIKT FOR DESKTOP */
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+	.hide_on_desktop {
+		display: none;
+	}
+
+	button {
+		color: #000;
+		background-color: #9ed3c3;
+		border: none;
+		padding: 1rem 4rem;
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+	}
+
+	button:hover {
+		background-color: #000;
+		color: #fff;
+	}
+
+	.selected {
+		background-color: #000;
+		color: #fff;
+	}
+
+	/* KAGER */
+	#main_kager {
+		display: grid;
+		grid-template-areas: "sidebar content content content";
+
+	}
+
+	.sidebar {
+		grid-area: sidebar;
+	}
+
+	.content {
+		grid-area: content;
+	}
+
+	#category_buttons {
+		background-color: #9ed3c3;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+	}
+}
