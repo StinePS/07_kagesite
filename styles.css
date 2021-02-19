@@ -41,6 +41,8 @@ h2 {}
 /* CLASSES */
 .gallery_image {
 	position: relative;
+	display: inline-block;
+	overflow: hidden;
 }
 
 
@@ -107,4 +109,40 @@ h2 {}
 		justify-content: space-between;
 
 	}
+}
+
+/* --------------- kager hover -----------------*/
+
+
+.hover_text {
+	opacity: 0;
+	font-size: 25px;
+}
+
+.gallery_image:hover p {
+	opacity: 1;
+}
+
+.gallery_image:hover img {
+	opacity: 0.3;
+	transform: scale(1.3);
+	transform-origin: 50% 50%;
+}
+
+.gallery_image {
+	display: grid;
+}
+
+.gallery_image img,
+.gallery_image p {
+	grid-area: 1 / 1;
+}
+
+.gallery_image img {
+	place-self: center;
+	display: block;
+}
+
+.gallery_image p {
+	place-self: center;
 }
