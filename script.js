@@ -57,7 +57,7 @@ function showCakes(filter) {
 			const clone = cakeTemplate.cloneNode(true);
 			clone.querySelector("img").src = medieurl + cake.foto1;
 			clone.querySelector("h3").textContent = cake.kagenavn;
-			clone.querySelector(".short_description").textContent = cake.kort_beskrivelse;
+			//clone.querySelector(".technique").textContent = cake.teknikker;
 			clone.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
 			// clone.querySelector(".cake_article").addEventListener("click", () => showDetails(cake));
 			section.appendChild(clone);
