@@ -2,163 +2,51 @@
 <html lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <title>Kageånd</title>
-    <style>
-    /* GENERELT */
-* {
-    padding: 0;
-    margin: 0;
-}
-
-img {
-    width: 100%;
-}
-
-
-/* FONTS & STYLING */
-h1 {}
-
-h2 {}
-
-#velkommen h2,
-#maanedens h2 {
-    text-align: center;
-}
-
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.button {
-    background-color: grey;
-    border: none;
-    color: white;
-    padding: 10px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-/* CLASSES */
-
-
-/* GRIDS */
-#splash {
-    display: grid;
-}
-
-.splash,
-.header {
-    grid-area: 1/1;
-}
-
-.splash {
-    background-image: url(https://placeimg.com/1400/450/any/grayscale);
-    width: 100vw;
-    height: 45vh;
-    background-image: cover;
-    background-size: cover;
-    display: grid;
-    background-position: 43% 15%;
-}
-
-.header {
-    place-self: center center;
-    background-color: grey;
-    width: 100%;
-    text-align: center;
-    opacity: 0.8;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.top {
-    margin-top: 5vh;
-}
-
-/* SPECIFIKT FOR MOBILE */
-@media (max-width: 767px) {
-
-    #velkommen,
-    #maanedens {
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 5vh;
-    }
-
-}
-
-
-/* SPECIFIKT FOR DESKTOP */
-@media (min-width: 768px) {
-    .splash {
-        width: 100vw;
-        height: 56.25vh;
-        display: grid;
-    }
-
-    .col {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 50px;
-    }
-
-    #velkommen p,
-    #maanedens p {
-        max-width: 550px;
-    }
-
-    #velkommen,
-    #maanedens {
-        margin-left: 50px;
-        margin-right: 50px;
-        margin-top: 10vh;
-    }
-}
-    </style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+	<title>Kageånd</title>
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <nav>HEADER</nav>
-    </header>
+	<header>
+		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
+		<nav>
+			<a href="kager.html">Kager</a>
+			<a href="om_os.html">Om os</a>
+		</nav>
+	</header>
 
-    <main>
-        <section id="splash">
-            <div class="splash"></div>
-            <div class="header">
-                <h1>KAGEÅND</h1>
-            </div>
-        </section>
-        <section id="velkommen">
-            <h2>Lidt om siden</h2>
-            <div class="center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolores quibusdam laboriosam debitis, aliquam voluptatibus quasi non nam incidunt eos inventore nisi dolorem ipsa provident consectetur autem, quo ullam. Praesentium!</p>
-            </div>
-            <div class="center top"><a href="kager.html" class="button">KAGER</a></div>
-        </section>
-        <section id="maanedens">
-            <h2>Månedens kage</h2>
-            <div class="col">
-                <div class="maanedens"><img src="https://placeimg.com/250/300/any/grayscale"></div>
-                <div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, mollitia iure sed reiciendis quisquam, necessitatibus. Tempora facilis tempore obcaecati mollitia dolorem quos, hic nemo maiores in, veritatis doloremque expedita voluptates?</p>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>FOOTER</footer>
+	<main>
+		<section id="splash">
+			<div class="splash_img"></div>
+			<div class="splash_h1">
+				<h1>Kageånd</h1>
+			</div>
+		</section>
+		<section id="velkommen">
+			<h2>Lidt om siden</h2>
+			<div class="center">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo dolores quibusdam laboriosam debitis, aliquam voluptatibus quasi non nam incidunt eos inventore nisi dolorem ipsa provident consectetur autem, quo ullam. Praesentium!</p>
+			</div>
+			<div class="center"><button id="frontpage_button"><a href="kager.html" class="button">Kager</a></button></div>
+		</section>
+		<section id="maanedens">
+			<h2>Månedens kage</h2>
+			<div class="col">
+				<div class="maanedens"><img src="https://placeimg.com/250/300/any/grayscale"></div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, mollitia iure sed reiciendis quisquam, necessitatibus. Tempora facilis tempore obcaecati mollitia dolorem quos, hic nemo maiores in, veritatis doloremque expedita voluptates?</p>
+				</div>
+			</div>
+		</section>
+	</main>
 
-    <script src="script.js"></script>
-</body>
+	<footer>
+		<p>JEG ER EN FOOTER</p>
+	</footer>
 
-</html>
+	<script src="script.js"></script>
+</body></html>
