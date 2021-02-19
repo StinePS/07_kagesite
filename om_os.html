@@ -7,18 +7,209 @@
 	<meta name="robots" content="noindex">
 	<title>Om os</title>
 	<link rel="stylesheet" href="styles.css">
+
+	<style>
+		/* generel */
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		img {
+			width: 100%;
+		}
+
+		h1 {
+			font-family: Bodoni MT, serif;
+			font-size: 45px;
+		}
+
+		h2 {
+			font-family: Tahoma, sans-serif;
+			font-weight: bold;
+			font-size: 25px;
+			color: #EAA7A2;
+		}
+
+		P {
+			font-family: arial, sans-serif;
+			font-size: 16px;
+		}
+
+
+
+		/* navigation bar */
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0px 20px;
+			background-color: #9ED3C3;
+		}
+
+		.logo {
+			width: 45px;
+			padding: 5px;
+			cursor: pointer;
+		}
+
+		.nav_links {
+			list-style: none;
+		}
+
+		.nav_links li {
+			display: inline;
+			padding: 0px 20px;
+		}
+
+		.nav_links li a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.nav_links li a:hover {
+			color: white;
+		}
+
+		/* Footer */
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+		}
+
+		footer {
+			background-color: #9ED3C3;
+			margin-top: auto;
+			padding: 30px;
+			text-align: center;
+		}
+
+		/* Om indhold */
+
+
+		.om_main {
+			max-width: 70vw;
+			margin: 0 auto;
+		}
+
+		.om_overskrift {
+			text-align: center;
+			margin: 20px;
+			text-transform: uppercase;
+		}
+
+		.om_intro {
+			margin: 30px 0px;
+		}
+
+		.om_h2 {
+			text-align: center;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.person {
+			background-color: #dfede9;
+		}
+
+		.person img {
+			padding: 20px;
+		}
+
+		.person ul {
+			padding: 0px 20px 20px 20px;
+		}
+
+		.om_section article {
+			margin: 0 0 30px 0;
+		}
+
+
+		@media (min-width: 700px) {
+
+			.om_section {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-gap: 20px;
+			}
+
+		}
+	</style>
 </head>
 
 <body>
 	<header>
-		<nav></nav>
+
+		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
+		<nav>
+			<ul class="nav_links">
+				<li><a href="kager.html">Kager</a></li>
+				<li><a href="om_os.html">Om os</a></li>
+			</ul>
+		</nav>
+
 	</header>
 
-	<main></main>
+	<main class="om_main">
+		<h1 class="om_overskrift">Om os</h1>
+		<p class="om_intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat magnam, possimus similique perferendis dolore dolor aperiam molestias ad adipisci reiciendis. Temporibus consectetur enim fuga neque unde laboriosam blanditiis, accusantium, voluptatibus cupiditate. Animi maxime quam quisquam eveniet fugit, officia sapiente maiores repellendus ipsa enim soluta nam praesentium? Quia neque expedita, laudantium.</p>
 
-	<footer></footer>
+		<section class="om_section">
+
+			<article>
+				<h2 class="om_h2">Stine</h2>
+				<div class="person">
+					<img src="placeholder.jpg" alt="billede af Stine">
+					<ul>
+						<li>Alder: </li>
+						<li>Ynglingskage: </li>
+						<li>Andet: </li>
+					</ul>
+				</div>
+			</article>
+
+			<article>
+				<h2 class="om_h2">Lucas</h2>
+				<div class="person">
+					<img src="placeholder.jpg" alt="billede af Lucas">
+					<ul>
+						<li>Alder: </li>
+						<li>Ynglingskage: </li>
+						<li>Andet: </li>
+					</ul>
+				</div>
+			</article>
+
+			<article>
+				<h2 class="om_h2">Rose Demskov</h2>
+				<div class="person">
+					<img src="rose-foto.jpg" alt="Billede af Rose">
+					<ul>
+						<li>Alder: 22 år</li>
+						<li>Ynglingskage: nougattærte</li>
+						<li>Andet: Hvis jeg skulle vælge mellem forret, hovedret og dessert, så ville jeg uden tøven vælge dessert.</li>
+					</ul>
+				</div>
+			</article>
+
+		</section>
+
+	</main>
+
+	<footer>
+		<p>JEG ER EN FOOTER</p>
+	</footer>
 
 	<script src="script.js"></script>
-</body>
-
-</html>
+</body></html>
