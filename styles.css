@@ -177,15 +177,6 @@ footer {
 
 }
 
-/* ====================================================================== */
-
-/* GRIDS */
-#gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-gap: 1rem;
-}
-
 
 /* ====================================================================== */
 
@@ -215,6 +206,29 @@ footer {
 	place-self: center center;
 	background-color: #dfede9;
 	width: 100%;
+}
+
+
+/* ====================================================================== */
+
+/* GALLERY */
+#category_buttons {
+	background-color: #fff;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: 1rem;
+
+}
+
+#gallery_section {
+	justify-content: center;
+}
+
+#gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	grid-gap: 1rem;
 }
 
 /* ====================================================================== */
