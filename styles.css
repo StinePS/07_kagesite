@@ -5,6 +5,16 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 img {
 	width: 100%;
 	vertical-align: middle;
@@ -143,6 +153,7 @@ footer {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	font-size: 1rem;
+	margin-top: auto;
 }
 
 
@@ -178,6 +189,11 @@ footer {
 	background-color: #dfede9;
 	padding: 1rem;
 
+}
+
+.single_view {
+	max-width: 80vw;
+	margin: 0 auto;
 }
 
 
@@ -235,9 +251,10 @@ footer {
 }
 
 /* ====================================================================== */
-
-/* SPECIFIKT FOR MOBILE */
-@media (max-width: 767px) {}
+/* SINGLE VIEW */
+#single_article {
+	padding: 2rem 0;
+}
 
 
 /* ====================================================================== */
