@@ -146,6 +146,11 @@ footer {
 /* ====================================================================== */
 
 /* CLASSES */
+
+.cake_article {
+	max-width: 270px;
+}
+
 .center {
 	display: flex;
 	justify-content: center;
@@ -215,11 +220,7 @@ footer {
 /* ====================================================================== */
 
 /* SPECIFIKT FOR MOBILE */
-@media (max-width: 767px) {
-	.hide_on_mobile {
-		display: none;
-	}
-}
+@media (max-width: 767px) {}
 
 
 /* ====================================================================== */
@@ -244,6 +245,11 @@ footer {
 		margin: 0 auto;
 	}
 
+	.grid-1-5 {
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+	}
+
 	/* Forside */
 	.splash {
 		width: 100vw;
@@ -255,20 +261,6 @@ footer {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		column-gap: 50px;
-	}
-
-	/* Kager */
-	#main_kager {
-		display: grid;
-		grid-template-areas: "sidebar content content content";
-	}
-
-	.sidebar {
-		grid-area: sidebar;
-	}
-
-	.content {
-		grid-area: content;
 	}
 
 	#category_buttons {
