@@ -18,12 +18,12 @@
 
 	<main>
 		<section>
-			<article>
-				<div id="img_details"><img src="" alt=""></div>
+			<article class="grid-1-1">
+				<div id="img_details" class="lines"><img src="" alt=""></div>
 				<div>
 					<h2 class="single_name"></h2>
-					<p class="technique"></p>
 					<p class="cake_time"></p>
+					<p class="technique"></p>
 					<p class="long_description"></p>
 					<button>Tilbage</button>
 				</div>
@@ -31,9 +31,61 @@
 		</section>
 	</main>
 
-	<footer></footer>
+	<footer>
+		<p>Februar 2021 | MMD 2. semester</p>
+	</footer>
 
-	<script src="script.js"></script>
+
+	<script>
+		//json data-info
+		const url = "https://kager-e10d.restdb.io/rest/kager";
+		const medieurl = "https://kager-e10d.restdb.io/media/";
+		const myHeaders = {
+			headers: {
+				'x-apikey': "602e8f495ad3610fb5bb635c"
+			}
+		};
+
+		//hent data, når DOM er loadet
+		document.addEventListener("DOMContentLoaded", getDetails);
+
+
+		//hent url-parameter fra forsiden
+		async function getCakeById(id) {
+			console.log("getCakeById", id);
+			if (!id) return undefined
+			const JSONData = await fetch(`https://kager-e10d.restdb.io/rest/kager/${id}`, myHeaders)
+			const cake = await JSONData.json()
+			console.log("cake", cake);
+			return cake;
+		}
+
+
+		async function getDetails() {
+			console.log("getDetails");
+			const urlParams = new URLSearchParams(window.location.search);
+			const id = urlParams.get("id");
+			if (id) {
+				const cake = await getCakeById(id);
+				showDetails(cake);
+			}
+			console.log("ID", id);
+		}
+
+		function showDetails(cake) {
+			document.querySelector(".single_name").textContent = cake.kagenavn;
+			document.querySelector("img").src = medieurl + cake.foto1;
+			document.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
+			document.querySelector(".technique").textContent = cake.teknikker;
+			document.querySelector(".long_description").textContent = cake.lang_beskrivelse;
+			document.querySelector("button").addEventListener("click", goBackToGallery);
+		}
+
+		function goBackToGallery() {
+			location.href = `kager.html`;
+		}
+
+	</script>
 </body>
 
 </html>

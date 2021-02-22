@@ -7,13 +7,13 @@ const myHeaders = {
 	}
 };
 
-
 //variabler og konstanter
 let cakes;
 
 //hent data, når DOM er loadet
 document.addEventListener("DOMContentLoaded", getData);
 
+//asynkron funktion henter JSON-data og afventer svar tilbage, før "start" køres
 async function getData() {
 	console.log("getData");
 	const JSONData = await fetch(url, myHeaders);
@@ -21,6 +21,7 @@ async function getData() {
 	start();
 }
 
+//eventlisteners på filtrerings-knapper + vis alle kager
 function start() {
 	console.log("start");
 
@@ -46,7 +47,7 @@ function filterCakes() {
 }
 
 
-//funktion der viser retter i liste-view
+//funktion der viser kager i liste-view
 function showCakes(filter) {
 	console.log("showCakes");
 	const section = document.querySelector("#gallery");
@@ -57,14 +58,9 @@ function showCakes(filter) {
 			const clone = cakeTemplate.cloneNode(true);
 			clone.querySelector("img").src = medieurl + cake.foto1;
 			clone.querySelector("h3").textContent = cake.kagenavn;
-			//clone.querySelector(".technique").textContent = cake.teknikker;
 			clone.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
-			// clone.querySelector(".cake_article").addEventListener("click", () => showDetails(cake));
+			clone.querySelector(".cake_article").addEventListener("click", () => location.href = `single_view.html?id=${cake._id}`);
 			section.appendChild(clone);
 		}
 	})
 }
-
-//function showDetails(singleView) {
-//	location.href = `babushka_details.html?id=${singleView._id}`;
-//}
