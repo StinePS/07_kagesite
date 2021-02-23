@@ -188,7 +188,16 @@ footer {
 .mint_box {
 	background-color: #dfede9;
 	padding: 1rem;
+	margin-bottom: 1rem;
 
+}
+
+.maanedens {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	width: 100%;
 }
 
 .single_view {
@@ -213,7 +222,7 @@ footer {
 
 .splash_img {
 	background-image: url(https://placeimg.com/1400/450/any/grayscale);
-	width: 100vw;
+	width: 100%;
 	height: 45vh;
 	background-image: cover;
 	background-size: cover;
@@ -283,9 +292,13 @@ footer {
 		grid-template-columns: 1fr 5fr;
 	}
 
+	.maanedens {
+		margin-bottom: 0;
+	}
+
 	/* Forside */
 	.splash {
-		width: 100vw;
+		width: 100%;
 		height: 56.25vh;
 		display: grid;
 	}
