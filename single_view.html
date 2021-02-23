@@ -29,13 +29,13 @@
 	<main>
 		<section class="single_view">
 			<article id="single_article" class="grid-1-1">
-				<div class="lines"><img src="" alt=""></div>
+				<div class="lines"><img id="cake_image" src="" alt=""></div>
 				<div>
 					<h2 class="single_name"></h2>
 					<p class="cake_time"></p>
 					<p class="technique"></p>
 					<p class="long_description"></p>
-					<button>Tilbage</button>
+					<div class="center"><button>Tilbage</button></div>
 				</div>
 			</article>
 		</section>
@@ -84,7 +84,7 @@
 
 		function showDetails(cake) {
 			document.querySelector(".single_name").textContent = cake.kagenavn;
-			document.querySelector("img").src = medieurl + cake.foto1;
+			document.querySelector("#cake_image").src = medieurl + cake.foto1;
 			document.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
 			document.querySelector(".technique").textContent = cake.teknikker;
 			document.querySelector(".long_description").textContent = cake.lang_beskrivelse;
