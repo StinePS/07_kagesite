@@ -5,6 +5,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="robots" content="noindex">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 	<title>Kageånd</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -13,19 +19,23 @@
 
 <body>
 	<header>
-		<nav></nav>
+		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
+		<nav>
+			<a href="kager.html">Kager</a>
+			<a href="om_os.html">Om os</a>
+		</nav>
 	</header>
 
 	<main>
 		<section class="single_view">
 			<article id="single_article" class="grid-1-1">
-				<div class="lines"><img src="" alt=""></div>
+				<div class="lines"><img id="cake_image" src="" alt=""></div>
 				<div>
 					<h2 class="single_name"></h2>
 					<p class="cake_time"></p>
 					<p class="technique"></p>
 					<p class="long_description"></p>
-					<button>Tilbage</button>
+					<div class="center"><button>Tilbage</button></div>
 				</div>
 			</article>
 		</section>
@@ -74,7 +84,7 @@
 
 		function showDetails(cake) {
 			document.querySelector(".single_name").textContent = cake.kagenavn;
-			document.querySelector("img").src = medieurl + cake.foto1;
+			document.querySelector("#cake_image").src = medieurl + cake.foto1;
 			document.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
 			document.querySelector(".technique").textContent = cake.teknikker;
 			document.querySelector(".long_description").textContent = cake.lang_beskrivelse;
@@ -84,5 +94,8 @@
 		function goBackToGallery() {
 			location.href = `kager.html`;
 		}
+
 	</script>
-</body></html>
+</body>
+
+</html>
