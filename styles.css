@@ -105,6 +105,10 @@ button:hover {
 	margin-bottom: 2rem;
 }
 
+#frontpage_button a {
+	text-transform: uppercase;
+}
+
 /* Kager */
 #button_filter {
 	background-color: #000;
