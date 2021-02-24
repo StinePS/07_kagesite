@@ -96,11 +96,6 @@ button:hover {
 	color: #fff;
 }
 
-.selected {
-	background-color: #000;
-	color: #fff;
-}
-
 #frontpage_button {
 	margin-bottom: 2rem;
 }
@@ -109,13 +104,13 @@ button:hover {
 	text-transform: uppercase;
 }
 
-/* Kager */
+/* Specifikt for knapper på kager.html */
 #button_filter {
 	background-color: #000;
 	color: #fff;
 }
 
-/* tilføj pseudo-element på alle img i gallery = hvide kanter */
+/* Tilføj pseudo-element på alle img i gallery = hvide kanter */
 .lines::after {
 	content: '';
 	position: absolute;
@@ -129,7 +124,6 @@ button:hover {
 /* ====================================================================== */
 
 /* HEADER */
-
 header {
 	display: flex;
 	justify-content: space-between;
@@ -146,7 +140,6 @@ header {
 /* ====================================================================== */
 
 /* FOOTER */
-
 footer {
 	background-color: #9ED3C3;
 	margin-top: auto;
@@ -168,7 +161,6 @@ footer a {
 /* ====================================================================== */
 
 /* CLASSES */
-
 .cake_article {
 	max-width: 270px;
 }
@@ -208,7 +200,6 @@ footer a {
 	background-color: #dfede9;
 	padding: 1rem;
 	margin-bottom: 1rem;
-
 }
 
 .maanedens {
@@ -217,6 +208,12 @@ footer a {
 	margin-right: auto;
 	margin-bottom: 1rem;
 	width: 100%;
+}
+
+/* Valgt sorteringsknap i gallery */
+.selected {
+	background-color: #000;
+	color: #fff;
 }
 
 .single_view {
@@ -284,7 +281,48 @@ footer a {
 	grid-gap: 1rem;
 }
 
+
+/* Hover på kage-articles */
+.hover_text {
+	opacity: 0;
+	font-size: 25px;
+}
+
+.gallery_image {
+	display: grid;
+}
+
+.gallery_image:hover p {
+	opacity: 1;
+}
+
+.gallery_image:hover img {
+	opacity: 0.3;
+	transform: scale(1.15);
+	transform-origin: 50% 50%;
+}
+
+.gallery_image img,
+.gallery_image p {
+	grid-area: 1 / 1;
+}
+
+.gallery_image img {
+	place-self: center;
+	display: block;
+	transition: 0.3s transform ease-out;
+}
+
+.gallery_image p {
+	place-self: center;
+}
+
+.technique {
+	white-space: pre-wrap;
+}
+
 /* ====================================================================== */
+
 /* SINGLE VIEW */
 #single_article {
 	padding: 2rem 0;
@@ -341,45 +379,4 @@ footer a {
 		justify-content: space-between;
 
 	}
-}
-
-/* --------------- kager hover -----------------*/
-
-
-.hover_text {
-	opacity: 0;
-	font-size: 25px;
-}
-
-.gallery_image {
-	display: grid;
-}
-
-.gallery_image:hover p {
-	opacity: 1;
-}
-
-.gallery_image:hover img {
-	opacity: 0.3;
-	transform: scale(1.15);
-	transform-origin: 50% 50%;
-}
-
-.gallery_image img,
-.gallery_image p {
-	grid-area: 1 / 1;
-}
-
-.gallery_image img {
-	place-self: center;
-	display: block;
-	transition: 0.3s transform ease-out;
-}
-
-.gallery_image p {
-	place-self: center;
-}
-
-.technique {
-	white-space: pre-wrap;
 }

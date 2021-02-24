@@ -7,11 +7,12 @@ const myHeaders = {
 	}
 };
 
-//variabler og konstanter
+//global variabel
 let cakes;
 
 //hent data, når DOM er loadet
 document.addEventListener("DOMContentLoaded", getData);
+
 
 //asynkron funktion henter JSON-data og afventer svar tilbage, før "start" køres
 async function getData() {
@@ -20,6 +21,7 @@ async function getData() {
 	cakes = await JSONData.json();
 	start();
 }
+
 
 //eventlisteners på filtrerings-knapper + vis alle kager
 function start() {
@@ -34,24 +36,26 @@ function start() {
 //eventlistener knyttet til knapperne vælger det aktive filter
 function filterCakes() {
 	console.log("filterCakes");
-	//sæt variablen "filter" til værdien af data-cakes på den klikkede knap
+	//sætter variablen "filter" til værdien af data-cakes på den klikkede knap
 	const filter = this.dataset.cakes;
-	//fjern class "selected" fra klikket knap
+	//fjerner class "selected" fra klikket knap
 	document.querySelector(".selected").classList.remove("selected");
-	//tilføj class "selected" til klikket knap
+	//tilføjer class "selected" til klikket knap
 	this.classList.add("selected")
-	//kald funktion showCakes efter indstilling af nyt filter
-	const h2 = document.querySelector("h2");
+	//kalder funktion showCakes efter indstilling af nyt filter
 	showCakes(filter);
+	//udskriver H2 som korresponderer med det valgte filter
+	const h2 = document.querySelector("h2");
 	h2.textContent = this.textContent;
 }
 
 
-//funktion der viser kager i liste-view
+//vis kager i liste-view
 function showCakes(filter) {
 	console.log("showCakes");
 	const section = document.querySelector("#gallery");
 	section.textContent = "";
+	//clon data for hver enkelt kage og indsæt i template som child til section
 	cakes.forEach(cake => {
 		if (filter == cake.kategori || filter == "alle") {
 			const cakeTemplate = document.querySelector("template").content;

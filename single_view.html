@@ -29,8 +29,10 @@
 		</nav>
 	</header>
 
+
 	<main>
 		<section class="single_view">
+			<!-- json-data hentes og indsættes i hver enkelt class i <article> -->
 			<article id="single_article" class="grid-1-1">
 				<div class="lines"><img id="cake_image" src="" alt=""></div>
 				<div>
@@ -72,20 +74,21 @@
 			return cake;
 		}
 
-
+		//modtag cake-id fra getCakeById og vis detaljer for pågældende kage
 		async function getDetails() {
 			console.log("getDetails");
 			document.querySelector("button").addEventListener("click", goBackToGallery);
 
 			const urlParams = new URLSearchParams(window.location.search);
 			const id = urlParams.get("id");
+
 			if (id) {
 				const cake = await getCakeById(id);
 				showDetails(cake);
 			}
-			console.log("ID", id);
 		}
 
+		//udskriv data for den pågældende kage
 		function showDetails(cake) {
 			document.querySelector(".single_name").textContent = cake.kagenavn;
 			document.querySelector("#cake_image").src = medieurl + cake.foto1;
@@ -94,6 +97,7 @@
 			document.querySelector(".long_description").textContent = cake.lang_beskrivelse;
 		}
 
+		//gå tilbage til gallery ved klik på knappen
 		function goBackToGallery() {
 			location.href = `kager.html`;
 		}
