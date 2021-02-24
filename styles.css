@@ -96,26 +96,39 @@ button:hover {
 	color: #fff;
 }
 
-.selected {
+#category_buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: 1rem;
+}
+
+#category_buttons button {
+	padding: 1rem 1rem;
+}
+
+#frontpage_button {
+	color: #000;
+	background-color: #9ed3c3;
+	border: none;
+	padding: 1rem 4rem;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-bottom: 2rem;
+}
+
+#frontpage_button:hover {
 	background-color: #000;
 	color: #fff;
 }
 
-#frontpage_button {
-	margin-bottom: 2rem;
-}
-
-#frontpage_button a {
-	text-transform: uppercase;
-}
-
-/* Kager */
 #button_filter {
 	background-color: #000;
 	color: #fff;
 }
 
-/* tilføj pseudo-element på alle img i gallery = hvide kanter */
+/* Tilføj pseudo-element på alle img i gallery = hvide kanter */
 .lines::after {
 	content: '';
 	position: absolute;
@@ -129,7 +142,6 @@ button:hover {
 /* ====================================================================== */
 
 /* HEADER */
-
 header {
 	display: flex;
 	justify-content: space-between;
@@ -146,7 +158,6 @@ header {
 /* ====================================================================== */
 
 /* FOOTER */
-
 footer {
 	background-color: #9ED3C3;
 	margin-top: auto;
@@ -168,7 +179,6 @@ footer a {
 /* ====================================================================== */
 
 /* CLASSES */
-
 .cake_article {
 	max-width: 270px;
 }
@@ -208,7 +218,6 @@ footer a {
 	background-color: #dfede9;
 	padding: 1rem;
 	margin-bottom: 1rem;
-
 }
 
 .maanedens {
@@ -217,6 +226,12 @@ footer a {
 	margin-right: auto;
 	margin-bottom: 1rem;
 	width: 100%;
+}
+
+/* Valgt sorteringsknap i gallery */
+.selected {
+	background-color: #000;
+	color: #fff;
 }
 
 .single_view {
@@ -261,15 +276,6 @@ footer a {
 /* ====================================================================== */
 
 /* GALLERY */
-#category_buttons {
-	background-color: #fff;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
-	margin: 1rem;
-
-}
-
 #gallery_section {
 	justify-content: center;
 }
@@ -284,7 +290,48 @@ footer a {
 	grid-gap: 1rem;
 }
 
+
+/* Hover på kage-articles */
+.hover_text {
+	opacity: 0;
+	font-size: 25px;
+}
+
+.gallery_image {
+	display: grid;
+}
+
+.gallery_image:hover p {
+	opacity: 1;
+}
+
+.gallery_image:hover img {
+	opacity: 0.3;
+	transform: scale(1.15);
+	transform-origin: 50% 50%;
+}
+
+.gallery_image img,
+.gallery_image p {
+	grid-area: 1 / 1;
+}
+
+.gallery_image img {
+	place-self: center;
+	display: block;
+	transition: 0.3s transform ease-out;
+}
+
+.gallery_image p {
+	place-self: center;
+}
+
+.technique {
+	white-space: pre-wrap;
+}
+
 /* ====================================================================== */
+
 /* SINGLE VIEW */
 #single_article {
 	padding: 2rem 0;
@@ -339,47 +386,10 @@ footer a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-
+		grid-gap: 0;
 	}
-}
 
-/* --------------- kager hover -----------------*/
-
-
-.hover_text {
-	opacity: 0;
-	font-size: 25px;
-}
-
-.gallery_image {
-	display: grid;
-}
-
-.gallery_image:hover p {
-	opacity: 1;
-}
-
-.gallery_image:hover img {
-	opacity: 0.3;
-	transform: scale(1.15);
-	transform-origin: 50% 50%;
-}
-
-.gallery_image img,
-.gallery_image p {
-	grid-area: 1 / 1;
-}
-
-.gallery_image img {
-	place-self: center;
-	display: block;
-	transition: 0.3s transform ease-out;
-}
-
-.gallery_image p {
-	place-self: center;
-}
-
-.technique {
-	white-space: pre-wrap;
+	#category_buttons button {
+		padding: 1.5rem 4rem;
+	}
 }
