@@ -96,15 +96,33 @@ button:hover {
 	color: #fff;
 }
 
+#category_buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: 1rem;
+}
+
+#category_buttons button {
+	padding: 1rem 1rem;
+}
+
 #frontpage_button {
+	color: #000;
+	background-color: #9ed3c3;
+	border: none;
+	padding: 1rem 4rem;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
 	margin-bottom: 2rem;
 }
 
-#frontpage_button a {
-	text-transform: uppercase;
+#frontpage_button:hover {
+	background-color: #000;
+	color: #fff;
 }
 
-/* Specifikt for knapper på kager.html */
 #button_filter {
 	background-color: #000;
 	color: #fff;
@@ -258,15 +276,6 @@ footer a {
 /* ====================================================================== */
 
 /* GALLERY */
-#category_buttons {
-	background-color: #fff;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
-	margin: 1rem;
-
-}
-
 #gallery_section {
 	justify-content: center;
 }
@@ -377,6 +386,10 @@ footer a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		grid-gap: 0;
+	}
 
+	#category_buttons button {
+		padding: 1.5rem 4rem;
 	}
 }
