@@ -9,6 +9,8 @@ const myHeaders = {
 
 //variabler og konstanter
 let cakes;
+let filter = "alle"; //så filteret starter med alle
+let sort;
 
 //hent data, når DOM er loadet
 document.addEventListener("DOMContentLoaded", getData);
@@ -25,7 +27,7 @@ async function getData() {
 function start() {
     console.log("start");
 
-    const filterButtons = document.querySelectorAll("nav button");
+    const filterButtons = document.querySelectorAll(".category_buttons button");
     filterButtons.forEach(button => button.addEventListener("click", filterCakes));
     document.querySelector(".sorter_tid").addEventListener("click", sortCakesTime);
     document.querySelector(".sorter_navn").addEventListener("click", sortCakesName);
@@ -36,8 +38,8 @@ function start() {
 //eventlistener knyttet til knapperne vælger det aktive filter
 function filterCakes() {
     console.log("filterCakes");
-    //sæt variablen "filter" til værdien af data-cakes på den klikkede knap
-    const filter = this.dataset.cakes;
+    //sæt variablen "filter" til værdien af data-cakes på den klikkede knap. 'const' er fjernet, så den er en global variabel og kan tilgås senere
+    filter = this.dataset.cakes;
     //fjern class "selected" fra klikket knap
     document.querySelector(".selected").classList.remove("selected");
     //tilføj class "selected" til klikket knap
@@ -50,15 +52,21 @@ function filterCakes() {
 
 //https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesTime() {
-    cakes.sort((a, b) => {
+
+    //er lavet til en variabel
+    const sort = cakes.sort((a, b) => {
         return a.tidsforbrug - b.tidsforbrug;
     });
-    //Her skal den gerne starte showCakes med samme filter som sidst, men sorteret
+
+    //kalder showcakes med den sorterede variabel (så den har samme filter)
+    showCakes(sort);
 }
 
 //https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesName() {
-    cakes.sort((a, b) => {
+
+    //er lavet til en variabel
+    const sort = cakes.sort((a, b) => {
         let fa = a.kagenavn.toLowerCase(),
             fb = b.kagenavn.toLowerCase();
 
@@ -70,12 +78,15 @@ function sortCakesName() {
         }
         return 0;
     });
-    //Her skal den gerne starte showCakes med samme filter som sidst, men sorteret
+
+    //kalder showcakes med den sorterede variabel (så den har samme filter)
+    showCakes(sort);
+
 
 }
 
 //funktion der viser kager i liste-view
-function showCakes(filter) {
+function showCakes(sort) {
     console.log("showCakes");
     const section = document.querySelector("#gallery");
     section.textContent = "";
