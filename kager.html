@@ -2,62 +2,67 @@
 <html lang="da">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="robots" content="noindex">
-	<title>Kager</title>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Kager</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-	<header>
+    <header>
 
-		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
-		<nav>
-			<a href="kager.html">Kager</a>
-			<a href="om_os.html">Om os</a>
-		</nav>
+        <a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
+        <nav>
+            <a href="kager.html">Kager</a>
+            <a href="om_os.html">Om os</a>
+        </nav>
 
-	</header>
+    </header>
 
-	<main class="grid-1-5">
-		<nav id="category_nav">
-			<div id="category_buttons">
-				<button data-cakes="alle" class="selected">Alle kager</button>
-				<button data-cakes="bryllup">Bryllup</button>
-				<button data-cakes="chokolade">Chokolade</button>
-				<button data-cakes="fest">Fest</button>
-				<button data-cakes="hygge">Hygge</button>
-				<button data-cakes="kagebord">Kagebord</button>
-				<button id="button_filter">Sortér</button>
-			</div>
+    <main class="grid-1-5">
+        <nav id="category_nav">
+            <div id="category_buttons">
+                <button data-cakes="alle" class="selected">Alle kager</button>
+                <button data-cakes="bryllup">Bryllup</button>
+                <button data-cakes="chokolade">Chokolade</button>
+                <button data-cakes="fest">Fest</button>
+                <button data-cakes="hygge">Hygge</button>
+                <button data-cakes="kagebord">Kagebord</button>
+            </div>
 
-		</nav>
+        </nav>
+        <div id="sorter">
+            <button id="button_filter" class="sorter_tid">Sortér (tid)</button>
+            <button id="button_filter" class="sorter_navn">Sortér (navn)</button>
+        </div>
 
 
-		<section id="gallery_section">
-			<h2>Alle kager</h2>
-			<div id="gallery" class="center"></div>
-		</section>
+        <section id="gallery_section">
+            <h2>Alle kager</h2>
+            <div id="gallery" class="center"></div>
+        </section>
 
-		<template>
-			<article class="cake_article">
-				<div class="gallery_image lines">
-					<img src="" alt="">
-					<p class="hover_text">Se detaljer</p>
-				</div>
-				<h3 class="cake_name"></h3>
-				<p class="cake_time"></p>
-			</article>
+        <template>
+            <article class="cake_article">
+                <div class="gallery_image lines">
+                    <img src="" alt="">
+                    <p class="hover_text">Se detaljer</p>
+                </div>
+                <h3 class="cake_name"></h3>
+                <p class="cake_time"></p>
+            </article>
 
-		</template>
-	</main>
+        </template>
+    </main>
 
-	<footer>
-		Februar 2021 | MMD 2. semester
-	</footer>
+    <footer>
+        Februar 2021 | MMD 2. semester
+    </footer>
 
-	<script src="script.js"></script>
-</body></html>
+    <script src="script.js"></script>
+</body>
+
+</html>
