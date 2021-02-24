@@ -158,6 +158,7 @@ footer a {
 	text-transform: none;
 	font-size: 1rem;
 	letter-spacing: normal;
+	padding: 0;
 }
 
 /* ====================================================================== */
@@ -172,6 +173,17 @@ footer a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.center a {
+	text-transform: none;
+	font-size: 1rem;
+	letter-spacing: normal;
+	padding: 0;
+}
+
+.center a:hover {
+	color: #9ED3C3;
 }
 
 .centrering {
