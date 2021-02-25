@@ -29,8 +29,10 @@ function start() {
 
     const filterButtons = document.querySelectorAll(".category_buttons button");
     filterButtons.forEach(button => button.addEventListener("click", filterCakes));
-    document.querySelector(".sorter_tid").addEventListener("click", sortCakesTime);
+    document.querySelector(".sorter_tid_op").addEventListener("click", sortCakesTime);
+    document.querySelector(".sorter_tid_ned").addEventListener("click", sortCakesTimeUp);
     document.querySelector(".sorter_navn").addEventListener("click", sortCakesName);
+    document.querySelector(".sorter_navn_ned").addEventListener("click", sortCakesNameUp);
     showCakes("alle");
 }
 
@@ -62,6 +64,13 @@ function sortCakesTime() {
     showCakes(sort);
 }
 
+function sortCakesTimeUp() {
+    const sort = cakes.sort((a, b) => b.tidsforbrug - a.tidsforbrug);
+
+    //kalder showcakes med den sorterede variabel (så den har samme filter)
+    showCakes(sort);
+}
+
 //https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesName() {
 
@@ -81,8 +90,25 @@ function sortCakesName() {
 
     //kalder showcakes med den sorterede variabel (så den har samme filter)
     showCakes(sort);
+}
 
+function sortCakesNameUp(){
+    //er lavet til en variabel
+    const sort = cakes.sort((a, b) => {
+        let fa = a.kagenavn.toLowerCase(),
+            fb = b.kagenavn.toLowerCase();
 
+        if (fb < fa) {
+            return -1;
+        }
+        if (fb > fa) {
+            return 1;
+        }
+        return 0;
+    });
+
+    //kalder showcakes med den sorterede variabel (så den har samme filter)
+    showCakes(sort);
 }
 
 //funktion der viser kager i liste-view
@@ -101,4 +127,24 @@ function showCakes(sort) {
             section.appendChild(clone);
         }
     })
+}
+
+//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+//toggle gem og vis dropdown elementer, når der klikkes
+function dropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// luk dropdown hvis man klikker udenfor
+window.onclick = function (event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
 }

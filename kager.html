@@ -32,9 +32,14 @@
                 <button data-cakes="hygge">Hygge</button>
                 <button data-cakes="kagebord">Kagebord</button>
             </div>
-            <div id="category_buttons" class="sorter">
-                <button id="button_filter" class="sorter_tid">Sortér (tid)</button>
-                <button id="button_filter" class="sorter_navn">Sortér (navn)</button>
+            <div id="category_buttons" class="sorter dropdown">
+                <button onclick="dropDown()" class="dropbtn">SORTÉR</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <button id="button_filter" class="sorter_tid_op">Tid (Stigende)</button>
+                    <button id="button_filter" class="sorter_tid_ned">Tid (Faldende)</button>
+                    <button id="button_filter" class="sorter_navn">Navn (A-Å))</button>
+                    <button id="button_filter" class="sorter_navn_ned">Navn (Å-A))</button>
+                </div>
             </div>
 
         </nav>
