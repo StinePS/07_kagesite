@@ -31,7 +31,7 @@
 
 
 	<main>
-		<section class="single_view">
+		<section class="single_view loading">
 			<!-- json-data hentes og indsættes i hver enkelt class i <article> -->
 			<article id="single_article" class="grid-1-1">
 				<div class="lines"><img id="cake_image" src="" alt=""></div>
@@ -40,10 +40,11 @@
 					<p class="cake_time"></p>
 					<p class="technique"></p>
 					<p class="long_description"></p>
-					<div class="center"><button>Tilbage</button></div>
+					<div class="center"><a class="button" href="kager.html">Tilbage</a></div>
 				</div>
 			</article>
 		</section>
+		<div class="load_text">Henter indhold...</div>
 	</main>
 
 	<footer>
@@ -77,7 +78,7 @@
 		//modtag cake-id fra getCakeById og vis detaljer for pågældende kage
 		async function getDetails() {
 			console.log("getDetails");
-			document.querySelector("button").addEventListener("click", goBackToGallery);
+			//document.querySelector("button").addEventListener("click", goBackToGallery);
 
 			const urlParams = new URLSearchParams(window.location.search);
 			const id = urlParams.get("id");
@@ -90,6 +91,7 @@
 
 		//udskriv data for den pågældende kage
 		function showDetails(cake) {
+			document.querySelector(".loading").classList.remove("loading");
 			document.querySelector(".single_name").textContent = cake.kagenavn;
 			document.querySelector("#cake_image").src = medieurl + cake.foto1;
 			document.querySelector(".cake_time").textContent = `Omtrentligt tidsforbrug: ${cake.tidsforbrug} timer`;
@@ -101,5 +103,8 @@
 		function goBackToGallery() {
 			location.href = `kager.html`;
 		}
+
 	</script>
-</body></html>
+</body>
+
+</html>

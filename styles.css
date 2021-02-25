@@ -32,7 +32,6 @@ h1 {
 	font-size: 4rem;
 	text-transform: uppercase;
 	text-align: center;
-	opacity: 0.8;
 	padding-top: 1rem;
 	letter-spacing: 0.1rem;
 }
@@ -44,6 +43,13 @@ h2 {
 	text-align: center;
 	color: #EAA7A2;
 	padding-bottom: 1rem;
+}
+
+h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1rem;
+	color: #000;
 }
 
 P {
@@ -80,34 +86,7 @@ li {
 }
 
 /* Knapper */
-
-button {
-	color: #000;
-	background-color: #9ed3c3;
-	border: none;
-	padding: 1rem 4rem;
-	font-size: 1rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1rem;
-}
-
-button:hover {
-	background-color: #000;
-	color: #fff;
-}
-
-#category_buttons {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
-	margin: 1rem;
-}
-
-#category_buttons button {
-	padding: 1rem 1rem;
-}
-
-#frontpage_button {
+.button {
 	color: #000;
 	background-color: #9ed3c3;
 	border: none;
@@ -118,26 +97,90 @@ button:hover {
 	margin-bottom: 2rem;
 }
 
-#frontpage_button:hover {
+.button:hover {
 	background-color: #000;
 	color: #fff;
 }
 
-#button_filter {
+button {
+	color: #000;
+	background-color: #9ed3c3;
+	border: none;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+
+button:hover {
 	background-color: #000;
 	color: #fff;
 }
 
-/* Tilføj pseudo-element på alle img i gallery = hvide kanter */
-.lines::after {
-	content: '';
+.category_buttons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: 1rem;
+}
+
+.category_buttons button {
+	padding: 1rem 1rem;
+}
+
+#sorting_buttons button {
+	background-color: #000;
+	color: #fff;
+	padding: 1rem 1rem;
+}
+
+#sorting_buttons button:hover {
+	color: #EAA7A2;
+}
+
+/* Dropdown */
+.dropbtn {
+	width: 100%;
+	cursor: pointer;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+	background-color: black;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-flex;
+}
+
+.dropdown-content {
+	display: none;
 	position: absolute;
-	border: 1px solid #fff;
-	top: 0.5rem;
-	bottom: 0.5rem;
-	left: 0.5rem;
-	right: 0.5rem;
+	background-color: #000;
+	overflow: hidden;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
+
+.dropdown-content button {
+	width: 100%;
+}
+
+.dropdown-content a {
+	color: black;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown a:hover {
+	background-color: #ddd;
+}
+
+.show {
+	display: block;
+}
+
+
 
 /* ====================================================================== */
 
@@ -189,14 +232,14 @@ footer a {
 	align-items: center;
 }
 
-.center a {
+#mail {
 	text-transform: none;
 	font-size: 1rem;
 	letter-spacing: normal;
 	padding: 0;
 }
 
-.center a:hover {
+#mail:hover {
 	color: #9ED3C3;
 }
 
@@ -205,6 +248,36 @@ footer a {
 	max-width: 1280px;
 	margin: 0 auto;
 	align-items: center;
+}
+
+/* Loading-tekst som vises indtil indhold er hentet */
+.loading {
+	display: none;
+}
+
+.load_text {
+	display: none;
+}
+
+.loading + .load_text {
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	font-size: 2rem;
+	text-align: center;
+	color: #EAA7A2;
+	padding: 3rem 0;
+}
+
+/* Tilføj pseudo-element på alle img i gallery = hvide kanter */
+.lines::after {
+	content: '';
+	position: absolute;
+	border: 1px solid #fff;
+	top: 0.5rem;
+	bottom: 0.5rem;
+	left: 0.5rem;
+	right: 0.5rem;
 }
 
 .lines,
@@ -242,45 +315,6 @@ footer a {
 .textbox {
 	margin: 1rem 0;
 }
-
-.dropbtn {
-  background-color: black;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: black;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
 
 /* ====================================================================== */
 
@@ -320,7 +354,7 @@ footer a {
 }
 
 #gallery_h2 {
-	padding: 2rem 0 1rem 0;
+	padding: 1rem 0;
 }
 
 #gallery {
@@ -420,7 +454,8 @@ footer a {
 		column-gap: 50px;
 	}
 
-	#category_buttons {
+	/* Kager */
+	.category_buttons {
 		background-color: #9ed3c3;
 		display: flex;
 		flex-direction: column;
@@ -428,7 +463,9 @@ footer a {
 		grid-gap: 0;
 	}
 
-	#category_buttons button {
+	.category_buttons button,
+	#sorting_buttons button {
 		padding: 1.5rem 4rem;
 	}
+
 }

@@ -2,82 +2,85 @@
 <html lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex">
-    <meta name="Description" content="På Kageånd.dk kan du finde inspiration til din næste kage. Klik her for at finde dit næste bageprojekt!">
-    <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <title>Kageånd</title>
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+	<meta name="Description" content="På Kageånd.dk kan du finde inspiration til din næste kage. Klik her for at finde dit næste bageprojekt!">
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<title>Kageånd</title>
+	<!-- fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <header>
-        <a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
-        <nav>
-            <a href="kager.html">Kager</a>
-            <a href="om_os.html">Om os</a>
-        </nav>
-    </header>
+	<header>
+		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
+		<nav>
+			<a href="kager.html">Kager</a>
+			<a href="om_os.html">Om os</a>
+		</nav>
+	</header>
 
 
-    <main class="grid-1-5">
-        <nav id="category_nav">
-            <!-- filtreringsknapper med data-attributter -->
-            <div id="category_buttons">
-                <button data-cakes="alle" class="selected">Alle kager</button>
-                <button data-cakes="bryllup">Bryllup</button>
-                <button data-cakes="chokolade">Chokolade</button>
-                <button data-cakes="fest">Fest</button>
-                <button data-cakes="hygge">Hygge</button>
-                <button data-cakes="kagebord">Kagebord</button>
-                <!-- <button id="button_filter">Sortér</button> -->
-            </div>
-            <div id="category_buttons" class="sorter dropdown">
-                <button onclick="dropDown()" class="dropbtn">SORTÉR</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <button id="button_filter" class="sorter_tid_op">Tid (Stigende)</button>
-                    <button id="button_filter" class="sorter_tid_ned">Tid (Faldende)</button>
-                    <button id="button_filter" class="sorter_navn">Navn (A-Å)</button>
-                    <button id="button_filter" class="sorter_navn_ned">Navn (Å-A)</button>
-                </div>
-            </div>
+	<main class="grid-1-5">
+		<nav id="category_nav">
+			<!-- filtreringsknapper med data-attributter -->
+			<div class="category_buttons">
+				<button data-cakes="alle" class="selected">Alle kager</button>
+				<button data-cakes="bryllup">Bryllup</button>
+				<button data-cakes="chokolade">Chokolade</button>
+				<button data-cakes="fest">Fest</button>
+				<button data-cakes="hygge">Hygge</button>
+				<button data-cakes="kagebord">Kagebord</button>
+				<div id="sorting_buttons" class="dropdown sorter">
+					<button id="sort_button" onclick="dropDown()" class="dropbtn">Sortér</button>
+					<div id="myDropdown" class="dropdown-content">
+						<button class="sorter_tid_op">Tid (Stigende)</button>
+						<button class="sorter_tid_ned">Tid (Faldende)</button>
+						<button class="sorter_navn">Navn (A-Å)</button>
+						<button class="sorter_navn_ned">Navn (Å-A)</button>
+					</div>
+				</div>
+			</div>
 
-        </nav>
 
-        <section id="gallery_section">
-            <div id="gallery_h2">
-                <h2>Alle kager</h2>
-            </div>
-            <!-- tomt "gallery" til kager -->
-            <div id="gallery" class="center"></div>
-        </section>
+		</nav>
 
-        <!-- indhold af <template> er html-skabelon for de enkelte kager -->
-        <template>
-            <article class="cake_article">
-                <div class="gallery_image lines">
-                    <img src="" alt="">
-                    <p class="hover_text">Se detaljer</p>
-                </div>
-                <h3 class="cake_name"></h3>
-                <p class="cake_time"></p>
-            </article>
-        </template>
-    </main>
+		<section id="gallery_section" class="loading">
+			<div id="gallery_h2">
+				<h2>Alle kager</h2>
+			</div>
+			<!-- tomt "gallery" til kager -->
+			<div id="gallery" class="center"></div>
+		</section>
+		<div class="load_text">Henter indhold...</div>
 
-    <footer>
-        København 2021 | <a href="mailto:stin039m@stud.kea.dk">E-mail - send os en hilsen her!</a>
-    </footer>
+		<!-- indhold af <template> er html-skabelon for de enkelte kager -->
+		<template>
+			<article class="cake_article">
+				<div class="gallery_image lines">
+					<img src="" alt="">
+					<p class="hover_text">Se detaljer</p>
+				</div>
+				<h3 class="cake_name"></h3>
+				<p class="cake_time"></p>
+			</article>
+		</template>
+	</main>
 
-    <script src="script.js"></script>
-</body></html>
+	<footer>
+		København 2021 | <a href="mailto:stin039m@stud.kea.dk">E-mail - send os en hilsen her!</a>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
