@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
 	<header>
 		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
@@ -32,14 +33,15 @@
 
 	<main class="grid-1-5">
 		<nav id="category_nav">
-			<!-- filtreringsknapper med data-attributter -->
 			<div class="category_buttons">
+				<!-- filtreringsknapper med data-attributter -->
 				<button data-cakes="alle" class="selected">Alle kager</button>
 				<button data-cakes="bryllup">Bryllup</button>
 				<button data-cakes="chokolade">Chokolade</button>
 				<button data-cakes="fest">Fest</button>
 				<button data-cakes="hygge">Hygge</button>
 				<button data-cakes="kagebord">Kagebord</button>
+				<!-- sorteringsknapper alfabetisk og efter tid -->
 				<div id="sorting_buttons" class="dropdown sorter">
 					<button id="sort_button" onclick="dropDown()" class="dropbtn">Sortér</button>
 					<div id="myDropdown" class="dropdown-content">
@@ -50,18 +52,15 @@
 					</div>
 				</div>
 			</div>
-
-
 		</nav>
 
 		<section id="gallery_section" class="loading">
 			<div id="gallery_h2">
 				<h2>Alle kager</h2>
 			</div>
-			<!-- tomt "gallery" til kager -->
-			<div id="gallery" class="center"></div>
+			<div id="gallery" class="center"></div><!-- tomt div-gallery til kager -->
 		</section>
-		<div class="load_text">Henter indhold...</div>
+		<div class="load_text">Henter indhold...</div><!-- tekst som vises indtil indhold er loadet -->
 
 		<!-- indhold af <template> er html-skabelon for de enkelte kager -->
 		<template>

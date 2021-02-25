@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 
+
 <body>
 	<header>
 		<a href="index.html"><img class="logo" src="kage-logo.png" alt="logo"></a>
@@ -44,7 +45,7 @@
 				</div>
 			</article>
 		</section>
-		<div class="load_text">Henter indhold...</div>
+		<div class="load_text">Henter indhold...</div><!-- tekst som vises indtil indhold er loadet -->
 	</main>
 
 	<footer>
@@ -78,7 +79,6 @@
 		//modtag cake-id fra getCakeById og vis detaljer for pågældende kage
 		async function getDetails() {
 			console.log("getDetails");
-			//document.querySelector("button").addEventListener("click", goBackToGallery);
 
 			const urlParams = new URLSearchParams(window.location.search);
 			const id = urlParams.get("id");
@@ -98,13 +98,5 @@
 			document.querySelector(".technique").textContent = cake.teknikker;
 			document.querySelector(".long_description").textContent = cake.lang_beskrivelse;
 		}
-
-		//gå tilbage til gallery ved klik på knappen
-		function goBackToGallery() {
-			location.href = `kager.html`;
-		}
-
 	</script>
-</body>
-
-</html>
+</body></html>

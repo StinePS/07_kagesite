@@ -94,7 +94,7 @@ function sortCakesName() {
 		return 0;
 	});
 
-	//kalder showcakes med den sorterede variabel (så den har samme filter)
+	//kalder showCakes med den sorterede variabel (så den har samme filter)
 	showCakes(sort);
 	sortText.textContent = "Navn (A-Å)";
 }
@@ -139,7 +139,7 @@ function showCakes(sort) {
 }
 
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
-//toggle gem og vis dropdown elementer, når der klikkes
+//toggle og vis dropdown-elementer, når der klikkes
 function dropDown() {
 	document.getElementById("myDropdown").classList.toggle("show");
 }
