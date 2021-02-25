@@ -10,7 +10,7 @@ const myHeaders = {
 //variabler og konstanter
 let cakes;
 let filter = "alle"; //så filteret starter med alle
-let sort;
+let sort; //variabel til sortering
 
 //hent data, når DOM er loadet
 document.addEventListener("DOMContentLoaded", getData);
@@ -55,7 +55,7 @@ function filterCakes() {
 //https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesTime() {
 
-    //er lavet til en variabel
+    //er lavet til en variabel med const
     const sort = cakes.sort((a, b) => {
         return a.tidsforbrug - b.tidsforbrug;
     });
@@ -64,6 +64,7 @@ function sortCakesTime() {
     showCakes(sort);
 }
 
+//https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesTimeUp() {
     const sort = cakes.sort((a, b) => b.tidsforbrug - a.tidsforbrug);
 
@@ -74,7 +75,7 @@ function sortCakesTimeUp() {
 //https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesName() {
 
-    //er lavet til en variabel
+    //er lavet til en variabel med const
     const sort = cakes.sort((a, b) => {
         let fa = a.kagenavn.toLowerCase(),
             fb = b.kagenavn.toLowerCase();
@@ -92,8 +93,9 @@ function sortCakesName() {
     showCakes(sort);
 }
 
+//https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
 function sortCakesNameUp(){
-    //er lavet til en variabel
+    //er lavet til en variabel med const
     const sort = cakes.sort((a, b) => {
         let fa = a.kagenavn.toLowerCase(),
             fb = b.kagenavn.toLowerCase();
