@@ -335,7 +335,6 @@ footer a {
 	background-image: url("img/kagebord.jpg");
 	width: 100%;
 	height: 45vh;
-	background-image: cover;
 	background-size: cover;
 	display: grid;
 	background-position: 43% 15%;
